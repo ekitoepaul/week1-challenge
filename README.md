@@ -150,20 +150,16 @@ The following test cases are designed to verify the functionality of the Pesa Ha
 
 | Test Case | Customer Name | Phone Number | Transaction Type | Amount (KSh) | Expected Output |
 |---|---|---|---|---:|---|
-| TC01 | Paul Ekitoe | 0712345678 | Send Money | 100 | Transaction successful. Fee: FREE. Total: KSh 100. |
-| TC02 | Mary Atieno | 0723456789 | Send Money | 500 | Transaction successful. Fee: KSh 13. Total: KSh 513. |
-| TC03 | John Kamau | 0112345678 | Send Money | 5,000 | Transaction successful. Fee: KSh 53. Total: KSh 5,053. |
-| TC04 | Grace Achieng | 0711223344 | Send Money | 25,000 | Transaction successful. Fee: KSh 108. Total: KSh 25,108. |
-| TC05 | Peter Otieno | 0722334455 | Withdraw Cash | 50 | Transaction successful. Fee: KSh 11. Total: KSh 61. |
-| TC06 | Jane Wanjiku | 0112233445 | Withdraw Cash | 500 | Transaction successful. Fee: KSh 29. Total: KSh 529. |
-| TC07 | David Kiptoo | 0723344556 | Withdraw Cash | 5,000 | Transaction successful. Fee: KSh 69. Total: KSh 5,069. |
-| TC08 | Sarah Njeri | 0713456789 | Withdraw Cash | 25,000 | Transaction successful. Fee: KSh 309. Total: KSh 25,309. |
-| TC09 | Michael Ouma | 0724567890 | Pay a Business | 10,000 | Transaction successful. Fee: FREE. Total: KSh 10,000. |
-| TC10 | Alice Chebet | 0712345678 | Withdraw Cash | 30 | Transaction refused: Minimum withdrawal is KSh 50. |
-| TC11 | Brian Mwangi | 0712345678 | Send Money | 160,000 | Transaction refused: Maximum amount is KSh 150,000. |
-| TC12 | Kevin Otieno | 1234567890 | Send Money | 1,000 | Invalid phone number. Enter 10 digits starting with 07 or 01. |
-| TC13 | Lucy Akinyi | 0712345678 | Send Money | three | Invalid amount. Please enter a valid number. |
-| TC14 | Blank | 0712345678 | Send Money | 500 | Transaction cancelled: A valid customer name is required. |
+| TC01 | PAUL EKITOE | 0717544278| Send Money | 100 | Transaction successful. Fee: FREE. Total: KSh 100. |
+| TC02 | NAPEIKAR JAMES | 0707088524 | Send Money | 1,000 | Transaction successful. Fee: KSh 13. Total: KSh 1,013. |
+| TC03 | DORCAS NATIIR | 0790151004 | Withdraw Cash | 1001 | Transaction successful. Fee: KSh 69. Total: KSh 1070. |
+| TC04 |SHARON AKUWAM | 0795619240 | Withdraw Cash | 4589 | Transaction successful. Fee: KSh 69. Total: KSh 4658. |
+| TC05| AMBROSE ETABO | 0757264304 | Pay a Business | 20,001 | Transaction successful. Fee: FREE. Total: KSh 20,001. |
+| TC06 | Alice Chebet | 0712345678 | Withdraw Cash | 25 | Transaction refused: Minimum withdrawal is KSh 50. |
+| TC07 | PETER NJOROGE | 0713254876 | Send Money | 155,000 | Transaction refused: Maximum amount is KSh 150,000. |
+| TC08 | KELVIN KIPKETER | 1234567890 | Invalid phone number. Enter 10 digits starting with 07 or 01. |
+| TC09 |FRANCIS KARANJA  | 0724419793 | Send Money | TEN | Invalid amount. Please enter a valid number. |
+| TC10 | Blank | 0795858748 | Send Money | 500 | Transaction cancelled: A valid customer name is required. |
 
 ### 9.2 Sample Expected Transaction Receipt
 
@@ -172,23 +168,116 @@ The following test cases are designed to verify the functionality of the Pesa Ha
 Sample console output:
 
 ```text
+app.js:159 
 ========================================
           PESA HARAKA RECEIPT
 ========================================
-Customer Name : MARY ATIENO
-Phone Number  : 254723456789
-Reference No. : 123456
+Customer Name : PAUL EKITOE
+Phone Number  : 254717544278
+Reference No. : 257902
 ----------------------------------------
 Transaction   : Send Money
 ----------------------------------------
-Description          Amount (KSh)
-Transaction                  500
-Transaction Fee               13
+Description           Amount (KSh)
+Transaction                    100
+Transaction Fee               FREE
 ----------------------------------------
-TOTAL                         513
+TOTAL                          100
 ========================================
        Thank you for using Pesa Haraka!
 ========================================
+
+app.js:159 
+========================================
+          PESA HARAKA RECEIPT
+========================================
+Customer Name : NAPEIKAR JAMES
+Phone Number  : 254707088524
+Reference No. : 292975
+----------------------------------------
+Transaction   : Send Money
+----------------------------------------
+Description           Amount (KSh)
+Transaction                  1,000
+Transaction Fee             KSh 13
+----------------------------------------
+TOTAL                        1,013
+========================================
+       Thank you for using Pesa Haraka!
+========================================
+
+
+app.js:159 
+========================================
+          PESA HARAKA RECEIPT
+========================================
+Customer Name : DORCAS NATIIR
+Phone Number  : 254790151004
+Reference No. : 190552
+----------------------------------------
+Transaction   : Withdraw Cash
+----------------------------------------
+Description           Amount (KSh)
+Transaction                  1,001
+Transaction Fee             KSh 69
+----------------------------------------
+TOTAL                        1,070
+========================================
+       Thank you for using Pesa Haraka!
+========================================
+
+app.js:159 
+========================================
+          PESA HARAKA RECEIPT
+========================================
+Customer Name : SHARON AKUWAM
+Phone Number  : 254795619240
+Reference No. : 163036
+----------------------------------------
+Transaction   : Withdraw Cash
+----------------------------------------
+Description           Amount (KSh)
+Transaction                  4,589
+Transaction Fee             KSh 69
+----------------------------------------
+TOTAL                        4,658
+========================================
+       Thank you for using Pesa Haraka!
+========================================
+
+app.js:159 
+========================================
+          PESA HARAKA RECEIPT
+========================================
+Customer Name : AMBROSE ETABO
+Phone Number  : 254757264304
+Reference No. : 850312
+----------------------------------------
+Transaction   : Pay a Business
+----------------------------------------
+Description           Amount (KSh)
+Transaction                 20,001
+Transaction Fee               FREE
+----------------------------------------
+TOTAL                       20,001
+========================================
+       Thank you for using Pesa Haraka!
+========================================
+
+app.js:86 Transaction refused: Minimum withdrawal is KSh 50.
+
+app.js:82 Transaction refused: Maximum amount is KSh 150,000.
+
+app.js:28 Invalid phone number. Enter 10 digits starting with 07 or 01.
+
+app.js:78 Invalid amount. Please enter a valid number.
+
+app.js:13 Transaction cancelled: A valid customer name is required.
+
+
+
+
+
 ```
 
 *Note: The reference number is randomly generated and will differ each time the program runs.*
