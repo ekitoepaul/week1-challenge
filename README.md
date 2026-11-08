@@ -274,33 +274,30 @@ app.js:78 Invalid amount. Please enter a valid number.
 
 app.js:13 Transaction cancelled: A valid customer name is required.
 
-
-
-
-
 ```
 
 *Note: The reference number is randomly generated and will differ each time the program runs.*
 
-### 9.3 Sample Withdrawal Receipt
+### 9.3 Sample Pay a Business Receipt
 
-**Test Case TC07: Withdraw Cash – KSh 5,000**
+**Test Case TC05: Pay a Business Cash – KSh 20,001**
 
 ```text
+app.js:159 
 ========================================
           PESA HARAKA RECEIPT
 ========================================
-Customer Name : DAVID KIPTOO
-Phone Number  : 254723344556
-Reference No. : 654321
+Customer Name : AMBROSE ETABO
+Phone Number  : 254757264304
+Reference No. : 850312
 ----------------------------------------
-Transaction   : Withdraw Cash
+Transaction   : Pay a Business
 ----------------------------------------
-Description          Amount (KSh)
-Transaction                5,000
-Transaction Fee               69
+Description           Amount (KSh)
+Transaction                 20,001
+Transaction Fee               FREE
 ----------------------------------------
-TOTAL                       5,069
+TOTAL                       20,001
 ========================================
        Thank you for using Pesa Haraka!
 ========================================
